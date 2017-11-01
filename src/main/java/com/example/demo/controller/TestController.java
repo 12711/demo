@@ -16,6 +16,7 @@ public class TestController {
         data.put("code",200);
         data.put("msg","this is a demo");
         System.out.printf("kkkkkkkkk");
+        System.out.println("000000");
         return data;
     }
 }
