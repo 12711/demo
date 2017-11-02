@@ -1,7 +1,9 @@
-FROM ubuntu-
+FROM ubuntu
+#VOLUME /opt/tools/jdk8.0/    /opt/java
+#VOLUME /opt/tools/mvn/  /opt/mvn
+ENV  PATH /opt/java/bin:$PATH
+ENV  PATH /opt/mvn/bin:$PATH
 RUN ls -l
-#WORKDIR /home/lsm/ideaworkhome/
-RUN pwd
-ADD target/*.jar /app.jar
-RUN chmod +x /app.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+RUN echo $PATH
+ADD target/*.jar app.jar
+ENTRYPOINT ["java","-jar","app.jar"]
